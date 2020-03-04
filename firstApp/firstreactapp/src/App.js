@@ -5,7 +5,8 @@ import SomeClassComponent from './components/SomeClassComponent';
 function App() {
   return (
     <div className="App">
-      <SomeClassComponent></SomeClassComponent>
+      <SomeClassComponent someText="This is a component"/>
+      <SomeClassComponent someText="Hello Timmy"/>
     </div>
   );
 }
