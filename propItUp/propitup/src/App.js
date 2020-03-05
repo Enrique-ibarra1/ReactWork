@@ -52,15 +52,16 @@ class App extends Component {
               age = {p.age}
               hairColor= {p.hairColor}
               idx = {idx}
+              key = {idx}
               handleClick = {this.handleAgeClick}
             />
           })
         }
-        <ChildComponent header={"Header Prop"}>
+        {/* <ChildComponent header={"Header Prop"}>
               <p>This is a child</p>
               <p>This is another child</p>
               <p>This is even another child</p>
-        </ChildComponent>
+        </ChildComponent> */}
       </div>
     );
   }
