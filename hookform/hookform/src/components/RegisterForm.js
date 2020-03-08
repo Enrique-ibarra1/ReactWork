@@ -22,15 +22,11 @@ const RegisterForm = (props) => {
             submitted: true
         })
     }
-    // let message = <h1>Please enter your information so we can sell it.</h1>
-    // if(form.submitted){
-    //     message = <h1>Thanks for your information we will make many $$$ off it</h1>
-    // }
     return(
         <div>
             {/* {message} */}
-            {form.submitted ? <h1>Thanks for your information we will make many $$$ off it</h1> : 
-            <h1>Pls enter your info so we can sell it</h1>}
+            {form.submitted ? <h1>Thanks for your information </h1> : 
+            <h1>Pls enter your info</h1>}
             <form onSubmit = {onSubmitHandler}>
                 <div> 
                     {form.firstName.length < 2 && (<p>Name must be longer than 2</p>)}
@@ -53,11 +49,11 @@ const RegisterForm = (props) => {
                 <input type="text" name="confirmPass" onChange={onChangeHandler}/><br></br>
                 <input type="submit"/><br></br>
             </form>
-    <h3>First Name: {form.firstName}</h3>
-    <h3>Last Name: {form.lastName}</h3>
-    <h3>Email: {form.email}</h3>
-    <h3>Password: {form.password}</h3>
-    <h3>Confirm Password: {form.confirmPass}</h3>
+            <h3>First Name: {form.firstName}</h3>
+            <h3>Last Name: {form.lastName}</h3>
+            <h3>Email: {form.email}</h3>
+            <h3>Password: {form.password}</h3>
+            <h3>Confirm Password: {form.confirmPass}</h3>
         </div>
     );
 }
