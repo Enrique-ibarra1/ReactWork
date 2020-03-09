@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [pokemans, setPokemans] = useState([]);
   const handleClick = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon")
+    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=999")
           .then(response => {
             return response.json();
         }).then(response => {
@@ -21,7 +21,7 @@ function App() {
       <ul>
         {
           pokemans.map((pokeman, idx) => {
-          return <li key={idx} index={idx}>{pokeman.name}</li>
+          return <li key={idx} index={idx}>{pokeman.name} #{idx +1}</li>
           })
         }
       </ul>
