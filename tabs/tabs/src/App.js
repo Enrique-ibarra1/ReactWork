@@ -8,22 +8,34 @@ function App() {
     {name: "tab one", desc: "this is tab one", isSeleted: false},
     {name: "tab two",  desc: "this is tab two", isSeleted: false},
     {name: "tab three",  desc: "this is tab three", isSeleted: false}
-  ]);
-  const handleClick = (e, idx) => {
-    e.preventDefault();
-  }
+    ]);
+    const [desc, setDesc] = useState("");
+    const handleClick = (e, idx) => {
+      e.preventDefault();
+    tabs.forEach((tab, i) => {
+      if(idx === i){
+        tab.isSeleted = true;
+        setDesc(tab.desc);
+        setTabs(oldtabs => [...oldtabs]);
+      }
+      else if( idx !== i){
+        tab.isSeleted = false;
+        setTabs(oldtabs => [...oldtabs]);
+      }
+    })
+      
+    }
   return (
     <div className="App">
       {
         tabs.map((t,idx) => {
-          return <Tab idx={idx} key={idx} name={t.name} onClick={(e, {idx}) => handleClick(e, {idx})}/>
+          return <Tab isSelected={t.isSeleted} idx={idx} key={idx} name={t.name} handleClick={handleClick}/>
         })
       }
       <p>
-        This is where descriptions go
+      {desc}
       </p>
     </div>
   );
-}
-
+} 
 export default App;
