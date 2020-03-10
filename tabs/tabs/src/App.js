@@ -10,26 +10,27 @@ function App() {
     {name: "tab three",  desc: "this is tab three", isSeleted: false}
     ]);
     const [desc, setDesc] = useState("");
+
     const handleClick = (e, idx) => {
       e.preventDefault();
-    tabs.forEach((tab, i) => {
-      if(idx === i){
-        tab.isSeleted = true;
-        setDesc(tab.desc);
-        setTabs(oldtabs => [...oldtabs]);
-      }
+      tabs.forEach((tab, i) => {
+        if(idx === i){
+          //!= toggle must not be used here 
+          tab.isSeleted = true;
+          setDesc(tab.desc);
+          setTabs(oldtabs => [...oldtabs]);
+        }
       else if( idx !== i){
         tab.isSeleted = false;
         setTabs(oldtabs => [...oldtabs]);
       }
     })
-      
     }
   return (
     <div className="App">
       {
         tabs.map((t,idx) => {
-          return <Tab isSelected={t.isSeleted} idx={idx} key={idx} name={t.name} handleClick={handleClick}/>
+          return <Tab isSelected={t.isSelected} idx={idx} key={idx} name={t.name} handleClick={handleClick}/>
         })
       }
       <p>
