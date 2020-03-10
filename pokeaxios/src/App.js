@@ -8,6 +8,7 @@ function App() {
   const [pokemans, setPokemans] = useState([]);
   const handleClick = () => {
     axios.get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=999").then(response =>{
+      console.log(response);
       setPokemans(response.data.results)
     })
   }
