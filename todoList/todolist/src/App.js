@@ -41,7 +41,7 @@ function App() {
           <label>To Do Task:</label>
           <input className="form-control col-3 mx-auto" type="text" value={form} onChange={(e) => setForm(e.target.value)} />
         </div>
-        <input type="submit" value="Add Todo" className="bn btn-primary"></input>
+        <input type="submit" value="Add Todo" className="btn btn-primary"></input>
       </form>
     </div>
   );
